@@ -32,6 +32,7 @@ public class Rhino extends Actor
             removeTouching(Pumpkin.class);
             MyWorld world = (MyWorld) getWorld();
             world.createPumpkin();
+            world.increaseScore();
         }
     }
 }
