@@ -11,14 +11,27 @@ public class Rhino extends Actor
     {
         if(Greenfoot.isKeyDown("left"))
         {
-            move(-1);
+            move(-2);
         }
         else if(Greenfoot.isKeyDown("right"))
         {
-            move(1);
+            move(2);
         }
         
         //Remove pumpkin if rhino eats it
-        removeTouching(Pumpkin.class);
+        eat();
+    }
+    /**
+     * eat pumpkin and spawn new one
+     */
+    public void eat()
+    {
+        
+        if(isTouching(Pumpkin.class))
+        {
+            removeTouching(Pumpkin.class);
+            MyWorld world = (MyWorld) getWorld();
+            world.createPumpkin();
+        }
     }
 }
