@@ -7,7 +7,14 @@ public class MyWorld extends World {
         Rhino rhino = new Rhino();
         addObject(rhino, 300, 200);
         
+        createPumpkin();
+    }
+    
+    public void createPumpkin()
+    {
         Pumpkin pumpkin = new Pumpkin();
-        addObject(pumpkin, 300, 0);
+        int x = Greenfoot.getRandomNumber(600);
+        int y = 0;
+        addObject(pumpkin, x, y);
     }
 }
