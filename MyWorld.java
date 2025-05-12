@@ -5,7 +5,7 @@ public class MyWorld extends World
     public int score = 0;
     Label scoreLabel;
     public MyWorld() {
-        super(600, 400, 1);
+        super(600, 400, 1, false);
         
         //create rhino object
         Rhino rhino = new Rhino();
@@ -18,6 +18,11 @@ public class MyWorld extends World
         createPumpkin();
     }
     
+    public void gameOver()
+    {
+        Label gameOverLabel = new Label("Game Over", 100);
+        addObject(gameOverLabel, 300, 200);
+    }
     public void increaseScore()
     {
         score++;
